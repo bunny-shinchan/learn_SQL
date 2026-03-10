@@ -9,7 +9,7 @@ We can use join where the FK is availble but it is not mandatory.
 
 ![img_39.png](../../screenshots/img_39.png)
 
-
+![img_6.png](img_6.png)
 INNER JOIN : You will get the common data from this join.
 
 If we need the common data from any two or more tables, we can use inner join.
