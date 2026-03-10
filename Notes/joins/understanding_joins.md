@@ -80,4 +80,3 @@ We don't have full join in MYSQL, so we need to use LEFT JOIN and RIGTH JOIN
 
 
 
-
