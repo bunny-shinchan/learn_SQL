@@ -64,10 +64,6 @@ INSERT INTO salaries (emp_id, salary) VALUES
 -- | 3      | 70000  |
 -- | 7      | 80000  |
 
-
-
-
-
 -- Q1
 -- Display employee name and department name for employees whose department exists.
 
@@ -75,6 +71,8 @@ SELECT e.emp_name, d.department_name
 FROM employees as e
 INNER JOIN departments as d
 ON e.department_id = d.department_id;
+
+
 
 -- Q2
 -- Display all employees with their department names.
@@ -85,14 +83,37 @@ FROM employees as e
 LEFT JOIN departments as d
 ON e.department_id = d.department_id;
 
-
 -- Q3
 -- Display all departments and the employees working in them.
 
-SELECT department_name, department_id
-FROM departments
-RIGHT JOIN employees
-ON departments.department_id = employees.department_id;
+SELECT d.department_name, e.emp_name
+FROM departments as d
+LEFT JOIN employees as e 
+ON e.department_id = d.department_id;
+
+-- Q4
+-- Display all employees and departments, even if they do not match.
+
+SELECT e.emp_name, d.department_name
+FROM employees as e
+LEFT JOIN departments as d
+ON e.department_id = d.department_id
+
+UNION 
+
+SELECT e.emp_name, d.department_name
+FROM departments as d
+LEFT JOIN employees as e
+ON e.department_id = d.department_id;
+
+
+-- Q5
+-- Display employees who are not assigned to any department.
+
+
+
+
+
 
 
 
